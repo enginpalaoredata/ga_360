@@ -10,17 +10,17 @@ include: "/**/user_facts.view"
 
 view: training_input {
   extends: [user_facts]
- ## Uses the SQL from the user facts table and dynamically updates the date range to look 900 days back for 360 days as our training dataset
+  ## Uses the SQL from the user facts table and dynamically updates the date range to look 900 days back for 360 days as our training dataset
   derived_table: {
     sql_trigger_value: SELECT CURRENT_DATE() ;;
     sql:
-{% assign x  = "${EXTENDED}" %}
-    {% assign updated_start_sql = x | replace: 'DAYS_BACK',"390"   %}
-    /*updated_start_date*/
-    {% assign updated_sql = updated_start_sql  | replace: 'DAYS_FROM',"360"  %}
-     /*updated_end_date*/
-    {{updated_sql}}
-    ;;
+    {% assign x  = "${EXTENDED}" %}
+        {% assign updated_start_sql = x | replace: 'DAYS_BACK',"390"   %}
+        /*updated_start_date*/
+        {% assign updated_sql = updated_start_sql  | replace: 'DAYS_FROM',"360"  %}
+         /*updated_end_date*/
+        {{updated_sql}}
+        ;;
   }
 
   # measure: count {}
@@ -33,12 +33,12 @@ view: testing_input {
   derived_table: {
     sql_trigger_value: SELECT CURRENT_DATE() ;;
     sql: {% assign x  = "${EXTENDED}" %}
-     {% assign updated_start_sql = x | replace: 'DAYS_BACK',"390"   %}
-    /*updated_start_date*/
-    {% assign updated_sql = updated_start_sql  | replace: 'DAYS_FROM',"360"  %}
-     /*updated_end_date*/
-    {{updated_sql}}
-     ;;
+           {% assign updated_start_sql = x | replace: 'DAYS_BACK',"390"   %}
+          /*updated_start_date*/
+          {% assign updated_sql = updated_start_sql  | replace: 'DAYS_FROM',"360"  %}
+           /*updated_end_date*/
+          {{updated_sql}}
+           ;;
   }
 }
 ######################## MODEL #############################
@@ -166,12 +166,12 @@ view: future_input {
   derived_table: {
     sql_trigger_value: SELECT CURRENT_DATE() ;;
     sql: {% assign x  = "${EXTENDED}" %}
-    {% assign updated_start_sql = x | replace: 'DAYS_BACK',"30"   %}
-    /*updated_start_date*/
-    {% assign updated_sql = updated_start_sql  | replace: 'DAYS_FROM',"31"  %}
-    /*updated_end_date*/
-    {{updated_sql}}
-    ;;
+          {% assign updated_start_sql = x | replace: 'DAYS_BACK',"30"   %}
+          /*updated_start_date*/
+          {% assign updated_sql = updated_start_sql  | replace: 'DAYS_FROM',"31"  %}
+          /*updated_end_date*/
+          {{updated_sql}}
+          ;;
   }
 
 

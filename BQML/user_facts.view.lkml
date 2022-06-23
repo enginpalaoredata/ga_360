@@ -61,7 +61,7 @@ view: user_facts {
       LEFT JOIN unique_dma ON user_label.clientId = unique_dma.clientId
       LEFT JOIN unique_day_of_week ON user_label.clientId = unique_day_of_week.clientId
       LEFT JOIN agg_metrics ON agg_metrics.clientId = user_label.clientId
-       ;;
+      ;;
   }
 
 

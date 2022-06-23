@@ -60,7 +60,6 @@
     subtitle_text: How likely are customers to make a future purchase?
     body_text: |-
       <center> <b>Recommended Action</b>👇 Update the filters above to slice and dice the propensity scores by audience traits. Drill in to see the client IDs that fall under that cohort. <center>
-
       <center> <b>Note: </b>The propensity score shows you how likely a customer is to make a future purchase. These numbers are based off of purchases from the past 30 days <center>
     row: 0
     col: 0
